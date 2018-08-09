@@ -11,6 +11,7 @@ namespace ElevenNote.Services
     public class NoteService
     {
         private readonly Guid _userId;
+
         public NoteService(Guid userId)
         {
             _userId = userId;
@@ -40,13 +41,13 @@ namespace ElevenNote.Services
             {
                 var query =
                     ctx
-                    .Notes
-                    .Where(e => e.OwnerID == _userId)
-                    .Select(
+                        .Notes
+                        .Where(e => e.OwnerID == _userId)
+                        .Select(
                         e => new NoteListItem
                         {
                             NoteId = e.NoteID,
-                            Title = e.Title
+                            Title = e.Title,
                             CreatedUtc = e.CreatedUtc
                         }
                      );
