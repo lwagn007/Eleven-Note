@@ -44,10 +44,10 @@
             @Html.DisplayFor(modelItem => item.NoteId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.NoteId })
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.NoteId })
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
